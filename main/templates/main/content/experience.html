@@ -1,0 +1,47 @@
+{% extends "main/include/base.html" %}
+
+{% block body %}
+<div class="jumbotron">
+    <h1>Lorem ipsum dolor blah blah blah. Lorem ipsum dolor blah blah blah. </h1>
+</div>
+<div class="container main-container">
+    <ul class="nav nav-pills nav-justified">
+      <li class="active"><a href="#intl" data-toggle="tab">International</a></li>
+      <li><a href="#positions" data-toggle="tab">Positions Held</a></li>
+      <li><a href="#publications" data-toggle="tab">Patents and Publications</a></li>
+      <li><a href="#technical" data-toggle="tab">Technical</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content exp-tabs">
+      <div class="tab-pane fade active in" id="intl">
+          {% for e in exp %}
+          {% if e.type = "INT" %}
+            {% include "main/include/exp_item.html" %}
+          {% endif %}
+          {% endfor %}
+      </div>
+      <div class="tab-pane fade" id="positions">
+          {% for e in exp %}
+          {% if e.type = "POS" %}
+            {% include "main/include/exp_item.html" %}
+          {% endif %}
+          {% endfor %}
+      </div>
+      <div class="tab-pane fade" id="publications">
+          {% for e in exp %}
+          {% if e.type = "PUB" %}
+            {% include "main/include/exp_item.html" %}
+          {% endif %}
+          {% endfor %}
+      </div>
+      <div class="tab-pane fade" id="technical">
+          {% for e in exp %}
+          {% if e.type = "TEC" %}
+            {% include "main/include/exp_item.html" %}
+          {% endif %}
+          {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock %}

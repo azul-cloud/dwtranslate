@@ -1,0 +1,35 @@
+{% extends "main/include/base.html" %}
+
+{% block body %}
+<section>
+    <img id="banner-img" src="/static/img/stbasils_blur.jpg">
+</section>
+
+<section id="main-content">
+<div class="jumbotron text-center">
+    <h1>Russian to English Technical Translating </h1>
+</div>
+<div class="container main-container">
+    <div class="row">
+        <div class="main-exp">
+            {% for e in special_exp %}
+                <div class="col-md-6">
+                    <h2>{{ e.title }}</h2>
+                    <p>{{ e.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-6 col-md-6" style="margin-top:30px;">
+            <div class="col-md-6">
+                <a class="btn btn-primary btn-block" href="{% url 'experience' %}">View More Experience</a>
+            </div>
+            <div class="col-md-6">
+                <a class="btn btn-primary btn-block" href="{% url 'contact' %}"><span class="glyphicon glyphicon-envelope"></span> Contact Me</a>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+{% endblock %}

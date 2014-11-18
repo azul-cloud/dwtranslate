@@ -1,0 +1,12 @@
+{% extends "main/include/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="container contact-container">
+    {% if status == "sent" %}
+    <div class="alert alert-success">Your Message has been sent</div>
+    {% endif %}
+
+    {% crispy form %}
+</div>
+{% endblock %}
